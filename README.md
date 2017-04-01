@@ -10,6 +10,6 @@ To use
 
 ## Notes
 
-  * After deploying, add "*/*" to Binary Media Types in "Binary Support" section of API Gateway in the console _there's probably some way to do the above on the command line_
+  * After deploying, add "*/*" to Binary Media Types in "Binary Support" section of API Gateway in the console _(there's probably some way to do this on the command line)_
   * If you get some sort of permissions error, Edit and save "Lambda Function" to same value in
     "Integration Request" section of "Resources" of the "{proxy+}.ANY" section of "Resources in "API Gateway"
