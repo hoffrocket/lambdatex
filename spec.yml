@@ -20,6 +20,6 @@ Resources:
 Outputs:
   LambdaTexApi:
     Description: URL for application
-    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/14/e=mc^2'
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/doit?q=e=mc%5E2&s=128'
     Export:
       Name: LambdaTexApi
