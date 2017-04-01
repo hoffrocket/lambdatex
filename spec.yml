@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  LambdaTexFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: jon.lambdatex.Application::handleRequest
+      Runtime: java8
+      CodeUri: target/lambdatex-0.0.1.jar
+      MemorySize: 256
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 1
+      Events:
+        GetResource:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: any
+Outputs:
+  LambdaTexApi:
+    Description: URL for application
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/14/e=mc^2'
+    Export:
+      Name: LambdaTexApi
